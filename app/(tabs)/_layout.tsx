@@ -24,11 +24,20 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="music"
         options={{
-          title: 'Explore',
+          title: 'Baixar Música',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'musical-notes' : 'musical-notes-outline'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="video"
+        options={{
+          title: 'Baixar Vídeo',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'videocam' : 'videocam-outline'} color={color} />
           ),
         }}
       />
