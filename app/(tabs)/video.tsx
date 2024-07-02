@@ -1,7 +1,6 @@
 //import { fetch } from 'react-native-ssl-pinning';
 
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform, Button, Alert, TextInput } from 'react-native';
+import { StyleSheet, Image, Platform, Button, Alert, TextInput, Keyboard } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -14,7 +13,7 @@ import React from 'react';
 import { getUrlYoutubeVideoDownloadWithId } from '@/scripts/youtube-link';
 
 
-export default function TabTwoScreen() {
+export default function TabTwoScreen() { 
   //const params = useLocalSearchParams<{ q?: string }>();
   //const [search, setSearch] = React.useState(params.q);
   const [urlInput, setUrlInput] = React.useState('');
@@ -51,13 +50,14 @@ export default function TabTwoScreen() {
       />
 
       <Button title={'Baixar Vídeo'} onPress={async () => {
+        Keyboard.dismiss();
         const urlDownloadFromBrowser = await getUrlYoutubeVideoDownloadWithId(urlInput) as any;
         if (typeof urlDownloadFromBrowser?.link === 'string' && urlDownloadFromBrowser?.link.includes('http')) {
           setUrlInput('');
           router.push(urlDownloadFromBrowser.link);
         }
         else
-          Platform.OS === 'web' ? alert('Erro ao baixar Vídeo') : Alert.alert('Erro ao baixar Vídeo');
+          Platform.OS === 'web' ? alert('Erro ao baixar Vídeo: ' + JSON.stringify(urlDownloadFromBrowser || '{null}')) : Alert.alert('Erro ao baixar Vídeo' + JSON.stringify(urlDownloadFromBrowser || '{null}'));
       }} />
 
 

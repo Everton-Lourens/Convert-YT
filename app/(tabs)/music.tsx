@@ -1,7 +1,6 @@
 //import { fetch } from 'react-native-ssl-pinning';
 
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform, Button, Alert, TextInput } from 'react-native';
+import { StyleSheet, Image, Platform, Button, Alert, TextInput, Keyboard } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -51,14 +50,14 @@ export default function TabTwoScreen() {
       />
 
       <Button title={'Baixar Música'} onPress={async () => {
+        Keyboard.dismiss();
         const urlDownloadFromBrowser = await getUrlYoutubeMusicDownloadWithId(urlInput) as any;
-        router.push('/' + urlDownloadFromBrowser);
         if (typeof urlDownloadFromBrowser?.link === 'string' && urlDownloadFromBrowser?.link.includes('http')) {
           setUrlInput('');
-          router.push('/' + urlDownloadFromBrowser.link);
+          router.push(urlDownloadFromBrowser.link);
         }
         else
-          Platform.OS === 'web' ? alert('Erro ao baixar música') : Alert.alert('Erro ao baixar música');
+          Platform.OS === 'web' ? alert('Erro ao baixar música: ' + JSON.stringify(urlDownloadFromBrowser || '{null}')) : Alert.alert('Erro ao baixar música' + JSON.stringify(urlDownloadFromBrowser || '{null}'));
       }} />
 
 

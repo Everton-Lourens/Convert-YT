@@ -21,15 +21,14 @@ export default function HomeScreen() {
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Baixe suas músicas e{'\n'}videos do Youtube</ThemedText>
+        <ThemedText type="subtitle">Baixe suas músicas e{'\n'}vídeos do Youtube</ThemedText>
         </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Passo 1: copie o link da música/video no youtube</ThemedText>
+        <ThemedText type="subtitle">Passo 1: copie o link da música/vídeo no youtube</ThemedText>
         <ThemedText>
-          Abra o Youtube, <ThemedText type="defaultSemiBold">aperte em compartilhar</ThemedText> clique em copiar link.{' '}
+          Abra o Youtube, <ThemedText type="defaultSemiBold">aperte em compartilhar vídeo e</ThemedText> clique em copiar link.{' '}
           <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
           </ThemedText>{' '}
         </ThemedText>
       </ThemedView>
@@ -37,14 +36,14 @@ export default function HomeScreen() {
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Passo 2: Volte para esse aplicativo</ThemedText>
         <ThemedText>
-          Clique na opção de música ou video na parte de baixo do aplicativo e <ThemedText type="defaultSemiBold">cole o link copiado</ThemedText>.
+          Clique na opção de música ou vídeo na parte de baixo do aplicativo e <ThemedText type="defaultSemiBold">cole o link copiado.</ThemedText>
         </ThemedText>
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Passo 3: Baixe sua música/video</ThemedText>
+        <ThemedText type="subtitle">Passo 3: Baixe sua música/vídeo</ThemedText>
         <ThemedText>
-          Clique em <ThemedText type="defaultSemiBold">baixar</ThemedText> e aguarde baixar a música/video{' '}
+          Clique em <ThemedText type="defaultSemiBold">baixar</ThemedText> e aguarde o navegador abrir. Clique nos três pontinhos {'(☰)'}, <ThemedText type="defaultSemiBold">depois clique em Download.</ThemedText>{' '}
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
