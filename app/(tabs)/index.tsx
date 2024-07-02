@@ -16,13 +16,13 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Bem-vindo!</ThemedText>
+        <ThemedText type="title">{process.env.API_KEY_RAPIDAPI ? 'Bem-vindo(a)!' : 'Bem-vindo!'}</ThemedText>
         <HelloWave />
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Baixe suas músicas e{'\n'}vídeos do Youtube</ThemedText>
-        </ThemedView>
+      </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Passo 1: copie o link da música/vídeo no youtube</ThemedText>
@@ -32,7 +32,7 @@ export default function HomeScreen() {
           </ThemedText>{' '}
         </ThemedText>
       </ThemedView>
-      
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Passo 2: Volte para esse aplicativo</ThemedText>
         <ThemedText>
